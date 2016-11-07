@@ -1,3 +1,9 @@
+/*Made by Keshav Gupta!
+www.keshlabs.in
+info@keshlabs.in
+
+See the function plot_frame_range to see instruction on changing plotting parameters*/
+
 #include <iostream>
 #include <thread>
 #include <sstream>
@@ -19,7 +25,8 @@ void done() {
 int plot_frame_range(int frame_begin, int frame_end, int frames) {
 	plot_param param;
 	double t;
-
+//Set following define to LOW_QUALITY to get fast renders (to preview), or HIGH_QUALITY to get full HD render.
+//Of course, edit these parameters if you want!
 #define HIGH_QUALITY
 #ifdef LOW_QUALITY
 	//LOW QUALITY RENDER
@@ -42,6 +49,7 @@ int plot_frame_range(int frame_begin, int frame_end, int frames) {
 
 	param.powers = { one,one,one,one };
 	for (int frame = frame_begin; frame < frame_end; frame++) {
+		//t goes from 0 to 1 as the frames progress. use t as a parameter below to configure plotting properties.
 		t = (double)frame / frames;
 		param.roots = { cmplx(pi*(1 - t / 3)),cmplx(pi*(1 + t / 3)) ,cmplx(pi*(2 * t / 3)) ,cmplx(pi*(-2 * t / 3)) };
 		param.filename = "animation6\\frame" + zero_pad(frame) + ".bmp";
