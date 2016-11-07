@@ -1,4 +1,7 @@
-#pragma once
+/*Made by Keshav Gupta
+www.keshlabs.in
+info@keshlabs.in
+*/
 #include <math.h>
 #include <fstream>
 #include <vector>
